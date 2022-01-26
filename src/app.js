@@ -20,5 +20,8 @@ app.use((err, request, response, next) => {
         'message': 'Internal server error'
     })
 })
+app.get('/', (req, res) => {
+    return res.send('Hello Winnin :)')
+})
 
 module.exports = { app }
