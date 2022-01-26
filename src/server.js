@@ -26,8 +26,7 @@ const custom_css = {
 const routes = require('./routes');
 const scheduled_job = require('./scheduled');   
 
-const PORT = 3000;
-const HOST = '0.0.0.0';
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -45,10 +44,10 @@ app.use((err, request, response, next) => {
     })
 })
 
-cron.schedule("0 * * * *", async () => {
+cron.schedule("0 0 0 * * *", async () => {
     await scheduled_job()
 });
 
-app.listen(PORT, HOST, () => {
-    console.log('Server is running');
+app.listen(PORT, () => {
+    console.log('Server is running on port', PORT);
 });
