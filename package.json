@@ -9,21 +9,23 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "build": "npx prisma generate && yarn prisma migrate deploy",
-    "test": "jest"
+    "test-local": "jest",
+    "test-docker": "docker exec -it nodejs yarn jest"
   },
   "dependencies": {
     "@prisma/client": "3.8.1",
     "axios": "^0.25.0",
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
-    "fs": "^0.0.1-security",
     "node-cron": "^3.0.0",
+    "openapi-types": "^10.0.0",
     "prisma": "^3.8.1",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
     "jest": "^27.4.7",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   }
 }
