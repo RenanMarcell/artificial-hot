@@ -20,11 +20,11 @@ const postsController = new PostsController();
  *          type: object
  *          properties:
  *            initial_date:
- *              description: Initial date for post creation
+ *              description: Initial date for post creation [MM/DD/YYYY]
  *              type: date
  *              example: 01/01/2021
  *            final_date:
- *              description: Final date for post creation
+ *              description: Final date for post creation [MM/DD/YYYY]
  *              type: date
  *              example: 01/20/2021
  *            order_by:
